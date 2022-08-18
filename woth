@@ -1,6 +1,6 @@
 #!/bin/sh
-echo "$(figlet ALT WOTH)"
-echo "This is the alternative version of woth, which solves the issue of timezone change\n"
+echo "$(figlet WOTH)"
+echo "WOTH is Word of the Day\n"
 echo " - Powered by Merriam-Webster, written by Amoghavarsha, @TheAmoghavarsha\n"
 
 the_word() {
