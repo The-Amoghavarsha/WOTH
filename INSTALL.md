@@ -14,7 +14,7 @@ git clone https://github.com/The-Amoghavarsha/WOTH.git
 cd WOTH
 chmod +x woth
 
-<h3> Or use alt-woth for better results </h3>
+*Or use alt-woth for better results* 
 chmod +x alt-woth
 ```
 
