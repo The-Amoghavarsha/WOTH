@@ -14,7 +14,7 @@ git clone https://github.com/The-Amoghavarsha/WOTH.git
 cd WOTH
 chmod +x woth
 
-Or use alt-woth for results without interruption 
+Or use alt-woth for results without timezone interruptions 
 chmod +x alt-woth
 ```
 
@@ -34,4 +34,5 @@ OR
 There is only one option to get the words of other days. 
 
 ./woth -o 
+./alt-woth -o
 ```
