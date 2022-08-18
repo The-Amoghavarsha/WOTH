@@ -13,19 +13,12 @@ date
 git clone https://github.com/The-Amoghavarsha/WOTH.git
 cd WOTH
 chmod +x woth
-
-Or use alt-woth for results without timezone interruptions 
-chmod +x alt-woth
 ```
 
 <h1>Run</h1>
 
 ```
 ./woth
-
-OR
-
-./alt-woth
 ```
 
 <h1>Options</h1>
@@ -34,5 +27,4 @@ OR
 There is only one option to get the words of other days. 
 
 ./woth -o 
-./alt-woth -o
 ```
