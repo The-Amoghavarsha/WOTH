@@ -13,12 +13,16 @@ date
 git clone https://github.com/The-Amoghavarsha/WOTH.git
 cd WOTH
 chmod +x woth
+
+<h3> Or use alt-woth for better results </h3>
+chmod +x alt-woth
 ```
 
 <h1>Run</h1>
 
 ```
 ./woth
+<h3> Or use alt-woth for better results </h3>
 ./alt-woth
 ```
 
