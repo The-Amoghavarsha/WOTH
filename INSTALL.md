@@ -19,6 +19,7 @@ chmod +x woth
 
 ```
 ./woth
+./alt-woth
 ```
 
 <h1>Options</h1>
