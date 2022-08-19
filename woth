@@ -20,9 +20,8 @@ done
 
 
 day=$(date "+%Y-%m-%d") 
-#d=$(curl -s https://www.merriam-webster.com/word-of-the-day/ | grep -E "<title>" | sed 's/| Merriam-Webster//g' | sed 's/<title>//g' | sed 's/<\/title>//g' | sed 's/Word of the Day://g')
 
-curl -s https://www.merriam-webster.com/word-of-the-day/*$day  | grep -E "<title>" | sed 's/| Merriam-Webster//g' | sed 's/<title>//g' | sed 's/<\/title>//g' 
+curl -s https://www.merriam-webster.com/word-of-the-day/  | grep -E "<title>" | sed 's/| Merriam-Webster//g' | sed 's/<title>//g' | sed 's/<\/title>//g' 
 
 lol=$(curl -s https://www.merriam-webster.com/word-of-the-day/  | grep -E "<title>" | sed 's/| Merriam-Webster//g' | sed 's/<title>//g' | sed 's/<\/title>//g' | sed 's/Word of the Day://g')
 
