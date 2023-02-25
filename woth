@@ -28,29 +28,3 @@ curl -s https://www.merriam-webster.com/word-of-the-day/*$enter | grep -E -m 5 "
   curl -s https://www.merriam-webster.com/dictionary/$word | grep -E -m5 "content=" | tail -n1 | sed 's/<meta name="description" content="//g' | sed 's/">//g' | sed 's/How to use//g' | sed 's/in a sentence.//g' | sed 's/Synonym Discussion of     //g' | sed 's/$word//g' | sed 's/<meta name="robots" content="noindex, nofollow//g' 
   
   curl -s https://www.merriam-webster.com/thesaurus/$word | grep -E -m5 "content=" | tail -n1 | sed 's/<meta name="description" content="//g' | sed 's/">//g' | sed 's/<meta name="robots" content="noindex, nofollow//g'
-
-   
-   
-
-
-
-
-         
-
-
-   
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
