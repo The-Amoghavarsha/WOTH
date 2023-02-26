@@ -7,9 +7,9 @@ the_word() {
 echo "Please enter the date in %Y-%M-%D (2022-01-01) format" 
 read enter 
 
-curl -s https://www.merriam-webster.com/word-of-the-day/*$enter | grep -E "<title>" | sed 's/| Merriam-Webster//g' | sed 's/<title>//g' | sed 's/<\/title>//g' | sed 's/Word of the Day/Word of the Day/g' 
+curl -s https://www.merriam-webster.com/word-of-the-day/*$enter | grep -E "<title>" | sed -e 's/| Merriam-Webster//g' -e 's/<title>//g' -e 's/<\/title>//g' -e 's/Merriam-Webster Logo//g' -e 's/Menu Toggle//g' -e 's/<svg xmlns="http:\/\/www.w3.org\/2000\/svg" width="82" height="82" viewBox="0 0 41 41" fill="none" class="svg menu-mob-logo replaced-svg">//g' -e '2,4d' 
 
-curl -s https://www.merriam-webster.com/word-of-the-day/*$enter | grep -E -m 5 "content=" | tail -n1 | sed 's/<meta name="description" content="//g' | sed 's/">//g' | sed 's/,">//g' 
+curl -s https://www.merriam-webster.com/word-of-the-day/*$enter | grep -E -m 5 "content=" | tail -n1 | sed -e 's/<meta name="description" content="//g' -e 's/">//g' -e 's/,">//g' 
  } 
   while getopts ':o' OPTION; 
   do case "$OPTION" 
@@ -18,13 +18,14 @@ curl -s https://www.merriam-webster.com/word-of-the-day/*$enter | grep -E -m 5 "
   return 
   done 
   
-  day=$(date "+%Y-%m-%d") 
-  curl -s https://www.merriam-webster.com/word-of-the-day/  | grep -E "<title>" | sed 's/| Merriam-Webster//g' | sed 's/<title>//g' | sed 's/<\/title>//g' 
+  # day=$(date "+%Y-%m-%d") 
+  curl -s https://www.merriam-webster.com/word-of-the-day/ | grep -E "<title>" | sed -e 's/| Merriam-Webster//g' -e 's/<title>//g' -e 's/<\/title>//g' -e 's/Merriam-Webster Logo//g' -e 's/Menu Toggle//g' -e 's/<svg xmlns="http:\/\/www.w3.org\/2000\/svg" width="82" height="82" viewBox="0 0 41 41" fill="none" class="svg menu-mob-logo replaced-svg">//g' -e '2,4d' 
   
-  lol=$(curl -s https://www.merriam-webster.com/word-of-the-day/  | grep -E "<title>" | sed 's/| Merriam-Webster//g' | sed 's/<title>//g' | sed 's/<\/title>//g' | sed 's/Word of the Day://g') 
+  lol=$(curl -s https://www.merriam-webster.com/word-of-the-day/  | grep -E "<title>" | sed -e 's/| Merriam-Webster//g' -e 's/<title>//g' -e 's/<\/title>//g' -e 's/Word of the Day://g' -e 's/Merriam-Webster Logo//g' -e 's/Menu Toggle//g' -e 's/<svg xmlns="http:\/\/www.w3.org\/2000\/svg" width="82" height="82" viewBox="0 0 41 41" fill="none" class="svg menu-mob-logo replaced-svg">//g' -e '2,4d') 
   
   word=$(echo $lol | tr '[:upper:]' '[:lower:]') 
   
-  curl -s https://www.merriam-webster.com/dictionary/$word | grep -E -m5 "content=" | tail -n1 | sed 's/<meta name="description" content="//g' | sed 's/">//g' | sed 's/How to use//g' | sed 's/in a sentence.//g' | sed 's/Synonym Discussion of     //g' | sed 's/$word//g' | sed 's/<meta name="robots" content="noindex, nofollow//g' 
+
+  curl -s https://www.merriam-webster.com/dictionary/$word | grep -E -m5 "content=" | tail -n1 | sed -e 's/<meta name="description" content="//g' -e 's/">//g' -e 's/How to use//g' -e 's/in a sentence.//g' -e 's/Synonym Discussion of     //g' -e 's/$word//g' -e 's/<meta name="robots" content="noindex, nofollow//g' 
   
-  curl -s https://www.merriam-webster.com/thesaurus/$word | grep -E -m5 "content=" | tail -n1 | sed 's/<meta name="description" content="//g' | sed 's/">//g' | sed 's/<meta name="robots" content="noindex, nofollow//g'
+  curl -s https://www.merriam-webster.com/thesaurus/$word | grep -E -m5 "content=" | tail -n1 | sed -e 's/<meta name="description" content="//g' -e 's/">//g' -e 's/<meta name="robots" content="noindex, nofollow//g'
