@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "$(figlet WOTH)" 
-echo "WOTH is Word of the Day\n" 
-echo " - Powered by Merriam-Webster, written by Amoghavarsha, @TheAmoghavarsha\n" 
+echo "WOTH is Word of the Day" 
+echo " - Powered by Merriam-Webster, written by Amoghavarsha, @TheAmoghavarsha" 
 
 the_word() { 
 echo "Please enter the date in %Y-%M-%D (2022-01-01) format" 
